@@ -3,14 +3,13 @@
     <app-nav />
     <router-view class="page" />
   </div>
-  <router-view />
 </template>
 
 <script>
 import AppNav from './components/AppNav'
 
 export default {
-  components: { AppNav }
+  components: { AppNav },
 }
 </script>
 

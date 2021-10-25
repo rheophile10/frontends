@@ -21,7 +21,7 @@ export default new Vuex.Store({
     SET_AUTH_ERROR(state, errorData) {
       console.log(errorData)
       state.auth_error_msg = errorData
-    }
+    },
   },
   actions: {
     register({ commit }, credentials) {
@@ -30,7 +30,9 @@ export default new Vuex.Store({
         .post('//localhost:5000/auth', credentials)
         .then(({ data }) => {
           console.log(data)
-          'error' in data ? commit('SET_AUTH_ERROR', data) : commit('SET_USER_DATA', data)
+          'error' in data
+            ? commit('SET_AUTH_ERROR', data)
+            : commit('SET_USER_DATA', data)
         })
     },
     login({ commit }, credentials) {
@@ -39,7 +41,9 @@ export default new Vuex.Store({
         .post('//localhost:5000/auth', credentials)
         .then(({ data }) => {
           console.log(data)
-          'error' in data ? commit('SET_AUTH_ERROR', data) : commit('SET_USER_DATA', data)
+          'error' in data
+            ? commit('SET_AUTH_ERROR', data)
+            : commit('SET_USER_DATA', data)
         })
     },
   },
@@ -51,6 +55,6 @@ export default new Vuex.Store({
       if (state.auth_error_msg) {
         return state.auth_error_msg['error']
       }
-    }
+    },
   },
 })

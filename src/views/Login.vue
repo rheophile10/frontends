@@ -5,8 +5,8 @@
       <input v-model="email" type="email" name="email" value />
       <label for="password"> Password </label>
       <input v-model="password" type="password" name="password" value />
-      <div class = "error" v-if="error">
-        {{error}}
+      <div class="error" v-if="error">
+        {{ error }}
       </div>
       <button type="submit" name="button">Login</button>
       <p>Don't have an account?</p>
@@ -37,8 +37,7 @@ export default {
         .then(() => {
           if (this.loggedIn) {
             this.$router.push({ name: 'Home' })
-            }
-          else {
+          } else {
             this.error = this.authError
           }
         })
@@ -46,7 +45,7 @@ export default {
   },
   computed: {
     ...authComputed,
-    ...authErrorComputed
+    ...authErrorComputed,
   },
 }
 </script>

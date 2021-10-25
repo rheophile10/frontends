@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-      you logged in, good job!
+    <img src="@/assets/dinosaurs-fucking.jpg" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import { authComputed } from '../vuex/helpers.js'
 export default {
   computed: {
     ...authComputed,
-  }
+  },
 }
 </script>
 

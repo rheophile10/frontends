@@ -11,6 +11,7 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_USER_DATA(state, userData) {
+      console.log('logged in!')
       state.user = userData
       localStorage.setItem('user', JSON.stringify(userData))
       axios.defaults.headers.common[
@@ -18,6 +19,7 @@ export default new Vuex.Store({
       ] = `Bearer ${userData.token}`
     },
     SET_AUTH_ERROR(state, errorData) {
+      console.log(errorData)
       state.auth_error_msg = errorData
     }
   },

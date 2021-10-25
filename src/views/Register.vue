@@ -1,6 +1,8 @@
 <template>
-  <div class="login">
+  <div class="register">
     <form @submit.prevent="login">
+      <label for="user_name"> User name </label>
+      <input v-model="user_name" type="user_name" name="user_name" value />
       <label for="email"> Email </label>
       <input v-model="email" type="email" name="email" value />
       <label for="password"> Password </label>
@@ -8,11 +10,7 @@
       <div class = "error" v-if="error">
         {{error}}
       </div>
-      <button type="submit" name="button">Login</button>
-      <p>Don't have an account?</p>
-      <router-link to="/register" class="register">
-        Register for one.
-      </router-link>
+      <button type="submit" name="button">Register</button>
     </form>
   </div>
 </template>
@@ -24,6 +22,7 @@ export default {
     return {
       email: '',
       password: '',
+      user_name: '',
       error: null,
     }
   },
@@ -33,6 +32,7 @@ export default {
         .dispatch('login', {
           email: this.email,
           password: this.password,
+          user_name: this.user_name,
         })
         .then(() => {
           if (this.loggedIn) {
@@ -52,20 +52,10 @@ export default {
 </script>
 
 <style scoped>
-.login {
+.register {
   margin: auto;
   width: 60%;
   padding: 10px;
-}
-
-.register {
-  font-weight: bold;
-  color: #2c3e50;
-  margin: auto 0.8em auto 0.4em;
-  text-decoration: none;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
 }
 
 button {

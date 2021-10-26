@@ -19,6 +19,7 @@ export default {
   display: flex;
   align-items: center;
   min-height: 50px;
+  min-width: 100%;
   padding: 0.2em 1em;
   background: linear-gradient(
     to top left,

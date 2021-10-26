@@ -14,7 +14,8 @@ export default {
 </script>
 
 <style scoped>
-.register {
+
+.Home {
   margin: auto;
   width: 60%;
   padding: 10px;
@@ -44,4 +45,13 @@ button {
   margin: 0.5em;
   font-weight: bold;
 }
+
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
 </style>
